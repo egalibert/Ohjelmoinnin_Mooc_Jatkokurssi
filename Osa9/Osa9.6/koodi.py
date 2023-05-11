@@ -18,7 +18,7 @@ class Tavara:
 class Matkalaukku:
 	def __init__ (self, maksimipaino :int):
 		self.maksimipaino = maksimipaino
-		self.tavarat = []
+		self.tavarat: list[Tavara] = []
 		self.weight = 0
 
 	def lisaa_tavara(self, tavara :"Tavara"):
