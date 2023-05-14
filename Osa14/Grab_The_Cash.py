@@ -35,7 +35,7 @@ class Coins:
 		self.x = randint(0, 640 - 50)
 		self.y = randint(-1500, -300)
 		self.finished = False
-		self.velocity = 2
+		self.velocity = 3
 		
 
 	def tiputa_kolikko(self, counter :int):
@@ -68,7 +68,7 @@ alas = False
 
 kello = pygame.time.Clock()
 
-kolikoita = 10
+kolikoita = 12
 kolikot = []
 for i in range(kolikoita):
 	i = Coins()
@@ -134,13 +134,13 @@ while True:
 			exit()
 
 	if oikealle and x + robo.get_width() <= 640:
-		x += 3
+		x += 3.5
 	if vasemmalle and x >= 0:
-		x -= 3
+		x -= 3.5
 	if ylos and y >= 0:
-		y -= 3
+		y -= 3.5
 	if alas and y + robo.get_height() <= 480:
-		y += 3
+		y += 3.5
 
 
 	naytto.fill((255, 0, 255))
