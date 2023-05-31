@@ -1,20 +1,22 @@
 
+class Solution:
+	def romanToInt(s: str) -> int:
+		result = 0
+		values = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000}
 
-def romanToInt(s :str):
-	total = 0
-	i = 0
+		s = s.replace("IV", "IIII").replace("IX", "VIIII")
+		s = s.replace("XL", "XXXX").replace("XC", "LXXXX")
+		s = s.replace("CD", "CCCC").replace("CM", "DCCCC")
 
-	while (i < len(s)):
-		if s[i] == 'I':
-			total += 1
-		i += 1
-	print(total)
-	return (total)
+		for letter in s:
+			result += values[letter]
+		return(result)
+
 
 def main():
-	s = "III"
+	s = "MCMXCIV"
 	
-	output = romanToInt(s)
+	output = Solution.romanToInt(s)
 	print(f"{s} = {output}")
 
 main()
