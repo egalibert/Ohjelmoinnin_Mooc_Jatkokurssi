@@ -2,30 +2,6 @@ import math
 from typing import List
 
 class Solution:
-	@staticmethod
-	def maximumDetonation(bombs: List[List[int]]) -> int:
-		maxDetonations = 0
-
-		for i in range(len(bombs)):
-			x1, y1, r1 = bombs[i]
-			detonations = 0
-
-			for j in range(len(bombs)):
-				if i != j:
-					x2, y2, r2 = bombs[j]
-					distance = math.sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2)
-
-					if distance <= r1 + r2:
-						detonations += 1
-
-			maxDetonations = max(maxDetonations, detonations)
-
-		return len(bombs) - maxDetonations
-	
-
-import math
-
-class Solution:
     @staticmethod
     def maximumDetonation(bombs: List[List[int]]) -> int:
         maxDetonations = 0
@@ -44,7 +20,7 @@ class Solution:
 
             maxDetonations = max(maxDetonations, detonations)
 
-        return len(bombs) - maxDetonations
+        return maxDetonations
 
 
 
