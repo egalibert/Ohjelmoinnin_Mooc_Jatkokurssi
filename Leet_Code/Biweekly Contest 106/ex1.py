@@ -17,10 +17,11 @@ class Solution:
 				print (numbers[i])
 				# numbers.remove(numbers[i])
 				total += 1
+				i += 1
 			print (numbers)
-			i += 1
+			# i += 1
 		print (total)
-		if len(numbers) != 0:
+		if total != 9:
 			return False
 		return True
     
