@@ -24,7 +24,7 @@ class Solution:
 					i2 += 1
 				else:
 					continue
-		return (newlist)
+		print(newlist)
 
 
 
