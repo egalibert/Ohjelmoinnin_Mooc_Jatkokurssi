@@ -6,20 +6,34 @@ class TreeNode:
         self.right = right
 
 class Solution:
-	def getMinimumDifference(root) -> int:
-		for value in root:
-			TreeNode(value)
-	
-def main():
-	root = [4,2,6,1,3]
-	
-	# root = [1,0,48,12,49]
-	result = 0
-	result = Solution.getMinimumDifference(root)
-	
-	print (result)
+	def getMinimumDifference(self, root) -> int:
+		new_list = []
+		current_list = root
+		prev = None
+		min_diff = float('inf')
 
-main()
+		while current_list or new_list:
+			while current_list:
+				new_list.append(current_list)
+				current_list = current_list.left
+			current_list = new_list.pop()
+
+			if prev is not None:
+				min_diff = min(min_diff, current_list.val - prev.val)
+
+			prev = current_list
+			current_list = current_list.right
+
+		return (min_diff)
+	
+root = TreeNode(4)
+root.left = TreeNode(2)
+root.right = TreeNode(6)
+root.left.left = TreeNode(1)
+root.left.right = TreeNode(3)
+
+result = Solution.getMinimumDifference(root)
+print(result)
 
 
 
