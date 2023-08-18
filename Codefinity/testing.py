@@ -11,3 +11,4 @@ median = np.median(df['salary_in_usd'])
 
 print('The mean value is', mean)
 print('The median value is', median)
+print('values difference is', median - mean)
