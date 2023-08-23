@@ -13,8 +13,8 @@ print(first_five)
 
 # Create the histplot
 plot = sns.histplot(data = data,
-                  x = 'body_mass_g',
-                 kde = True)
+x = 'body_mass_g',
+kde = True)
 plot.set_title('Penguins')
 plot.set(xlabel = 'The Mass', ylabel = 'The Quantity')
 plt.show()
