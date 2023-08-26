@@ -9,6 +9,7 @@ data = pd.read_csv('https://codefinity-content-media.s3.eu-west-1.amazonaws.com/
 
 # Output the first five observations
 first_five = data.head(5)
+last_five = data.tail(5)
 print(first_five)
 
 # Create the histplot
